@@ -240,6 +240,8 @@ GEM
     sqlite3 (2.7.3-x86_64-linux-gnu)
     sqlite3 (2.7.3-x86_64-linux-musl)
     stringio (3.1.7)
+    strong_migrations (2.5.0)
+      activerecord (>= 7.1)
     thor (1.4.0)
     timeout (0.4.3)
     tzinfo (2.0.6)
@@ -274,6 +276,7 @@ DEPENDENCIES
   rails (~> 7.2.2, >= 7.2.2.1)
   rubocop-rails-omakase
   sqlite3 (>= 1.4)
+  strong_migrations
   tzinfo-data
 
 BUNDLED WITH
