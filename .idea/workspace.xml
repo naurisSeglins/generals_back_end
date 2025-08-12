@@ -4,26 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="adding model and migrating to db">
-      <change beforePath="$PROJECT_DIR$/.idea/generals_back_end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generals_back_end.iml" afterDir="false" />
+    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="model validations and rspec tests, deleting old tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/unit.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/unit.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/channels/application_cable/connection_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controllers/.keep" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories/unit.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/files/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/fixtures/units.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/integration/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/mailers/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/.keep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/models/unit_test.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_helper.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Class" />
+      </list>
+    </option>
   </component>
   <component name="FormatOnSaveOptions">
     <option name="myRunOnSave" value="true" />
@@ -46,36 +41,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor": "Run",
-    "RSpec.Unit validations verify name validation when position isn't a number.executor": "Run",
-    "RSpec.Unit validations verify unit attributes has correct attributes.executor": "Run",
-    "RSpec.Unit validations verify unit attributes.executor": "Run",
-    "RSpec.Unit validations when name have special characters and spaces.executor": "Run",
-    "RSpec.Unit validations when position isn't a number.executor": "Run",
-    "RSpec.Unit validations.executor": "Run",
-    "RSpec.Unit verify attributes when correct unit attributes.executor": "Run",
-    "RSpec.Unit verify attributes.executor": "Run",
-    "RSpec.Unit verify unit attributes has correct attributes.executor": "Run",
-    "RSpec.Unit.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/nseglins/Udemy/game/generals_back_end",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rearrange.code.on.save": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify name validation when position isn't a number.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify unit attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations when name have special characters and spaces.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations when position isn't a number.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify attributes when correct unit attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;controller__routes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nseglins/Udemy/game/generals_back_end&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.codeium.AppSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RubocopSettings">
     <option name="runOnSave" value="true" />
   </component>
@@ -369,7 +366,11 @@
       <workItem from="1753869023071" duration="2798000" />
       <workItem from="1754225375922" duration="26523000" />
       <workItem from="1754559908949" duration="39000" />
-      <workItem from="1754559955092" duration="11245000" />
+      <workItem from="1754559955092" duration="13252000" />
+      <workItem from="1754905926967" duration="174000" />
+      <workItem from="1754906129747" duration="13000" />
+      <workItem from="1754978822819" duration="1414000" />
+      <workItem from="1754980249831" duration="1014000" />
     </task>
     <task id="LOCAL-00001" summary="base project">
       <option name="closed" value="true" />
@@ -387,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754251570311</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="model validations and rspec tests, deleting old tests">
+      <option name="closed" value="true" />
+      <created>1754896503443</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1754896503443</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +405,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base project" />
     <MESSAGE value="adding model and migrating to db" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding model and migrating to db" />
+    <MESSAGE value="model validations and rspec tests, deleting old tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="model validations and rspec tests, deleting old tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/generals_back_end@Unit.rcov" NAME="Unit Coverage Results" MODIFIED="1754895866269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />

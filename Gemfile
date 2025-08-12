@@ -44,7 +44,6 @@ group :development, :test do
   gem "rubocop-rspec", "~> 2.29", require: false
 end
 
-
 group :test do
   gem "rspec-rails" # CLI spec runner. `rspec spec/models/`
   gem "factory_bot_rails" # allows `create(:product)` etc. easy setup
@@ -56,3 +55,4 @@ end
 
 gem "strong_migrations"
 
+gem "active_model_serializers", "~> 0.10.15"
