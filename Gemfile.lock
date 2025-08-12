@@ -211,7 +211,7 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    regexp_parser (2.10.0)
+    regexp_parser (2.11.1)
     reline (0.6.2)
       io-console (~> 0.5)
     rexml (3.4.1)
@@ -246,10 +246,6 @@ GEM
     rubocop-ast (1.46.0)
       parser (>= 3.3.7.2)
       prism (~> 1.4)
-    rubocop-capybara (2.21.0)
-      rubocop (~> 1.41)
-    rubocop-factory_bot (2.26.1)
-      rubocop (~> 1.61)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -266,13 +262,8 @@ GEM
       rubocop-minitest
       rubocop-performance
       rubocop-rails
-    rubocop-rspec (2.29.2)
-      rubocop (~> 1.40)
-      rubocop-capybara (~> 2.17)
-      rubocop-factory_bot (~> 2.22)
-      rubocop-rspec_rails (~> 2.28)
-    rubocop-rspec_rails (2.28.3)
-      rubocop (~> 1.40)
+    rubocop-rspec (3.4.0)
+      rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     securerandom (0.4.1)
     shoulda-matchers (6.4.0)
@@ -299,7 +290,7 @@ GEM
     timeout (0.4.3)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    unicode-display_width (2.5.0)
+    unicode-display_width (2.6.0)
     useragent (0.16.11)
     webmock (3.25.0)
       addressable (>= 2.8.0)
@@ -334,7 +325,7 @@ DEPENDENCIES
   rubocop (~> 1.62.0)
   rubocop-rails (~> 2.24)
   rubocop-rails-omakase
-  rubocop-rspec (~> 2.29)
+  rubocop-rspec (~> 3.4)
   shoulda-matchers
   simplecov
   sqlite3 (>= 1.4)
