@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ApiController < ApplicationController
-  def respond_with_resource(resource, status: :ok)
+  def respond_with_resource(resource, status)
     render json: resource, status: status
   end
 
