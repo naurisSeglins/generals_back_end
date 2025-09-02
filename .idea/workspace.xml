@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/strong_migrations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/strong_migrations.rb" afterDir="false" />
-    </list>
+    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="rubocop fixes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -419,7 +416,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755003393593</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="rubocop fixes">
+      <option name="closed" value="true" />
+      <created>1756781607119</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1756781607119</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +435,8 @@
     <MESSAGE value="adding model and migrating to db" />
     <MESSAGE value="model validations and rspec tests, deleting old tests" />
     <MESSAGE value="controllers index, render, routes, serializer" />
-    <option name="LAST_COMMIT_MESSAGE" value="controllers index, render, routes, serializer" />
+    <MESSAGE value="rubocop fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="rubocop fixes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/generals_back_end@Unit.rcov" NAME="Unit Coverage Results" MODIFIED="1756695312964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
