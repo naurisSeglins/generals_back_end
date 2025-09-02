@@ -71,5 +71,3 @@ group :test do
   gem "webmock", require: false # allows `stub_request(:any, "www.example.com")`
   gem "tapioca", require: false # CLI generator for sorbet RBI files
 end
-
-

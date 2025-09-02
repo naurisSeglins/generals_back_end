@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spec/rails_spec.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/simplecov_config.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/support/hooks/time_hook.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/generals_back_end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generals_back_end.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/unit_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/unit_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/unit.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/unit.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/unit_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/unit_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/rails_helper.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/strong_migrations.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/strong_migrations.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,45 +46,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultRubyCreateTestTemplate&quot;: &quot;RSpec&quot;,
-    &quot;RSpec.Rails timecop hook freezes time at specified moment.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Rails timecop hook.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Rails.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify name validation when position isn't a number.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify unit attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations when name have special characters and spaces.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations when position isn't a number.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify attributes when correct unit attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;controller__routes&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nseglins/Udemy/game/generals_back_end&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultRubyCreateTestTemplate": "RSpec",
+    "RSpec.Rails timecop hook freezes time at specified moment.executor": "Run",
+    "RSpec.Rails timecop hook.executor": "Run",
+    "RSpec.Rails.executor": "Run",
+    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor": "Run",
+    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor": "Run",
+    "RSpec.Unit callbacks.executor": "Run",
+    "RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor": "Run",
+    "RSpec.Unit validations verify name validation when position isn't a number.executor": "Run",
+    "RSpec.Unit validations verify unit attributes has correct attributes.executor": "Run",
+    "RSpec.Unit validations verify unit attributes.executor": "Run",
+    "RSpec.Unit validations when name have special characters and spaces.executor": "Run",
+    "RSpec.Unit validations when position isn't a number.executor": "Run",
+    "RSpec.Unit validations.executor": "Run",
+    "RSpec.Unit verify attributes when correct unit attributes.executor": "Run",
+    "RSpec.Unit verify attributes.executor": "Run",
+    "RSpec.Unit verify unit attributes has correct attributes.executor": "Run",
+    "RSpec.Unit.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "controller__routes",
+    "last_opened_file_path": "/Users/nseglins/Udemy/game/generals_back_end",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "ruby.rubocop",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RubocopSettings">
     <option name="runOnSave" value="true" />
   </component>
