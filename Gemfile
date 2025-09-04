@@ -41,6 +41,9 @@ gem "jsonapi_parameters", "~> 2.3" # allows `params.from_jsonapi.require(:model)
 
 gem "sorbet-runtime"
 
+# JSON Schema validation
+gem "json-schema"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
