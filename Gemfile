@@ -39,7 +39,7 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem "rubocop", "~> 1.62.0", require: false
+  gem "rubocop", "~> 1.80.2", require: false
   gem "rubocop-rails", "~> 2.24", require: false
   gem "rubocop-rspec", "~> 2.29", require: false
 end
