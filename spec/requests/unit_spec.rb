@@ -9,12 +9,12 @@ RSpec.describe "Units", type: :request do
     context "when requesting all units" do
       let(:unit_a) do
         Timecop.freeze("2025-01-02 11:00") do
-          build_stubbed(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
+          create(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
         end
       end
       let(:unit_b) do
         Timecop.freeze("2025-01-03 10:00") do
-          build_stubbed(:unit, name: "unitB", position_x: 222.0, position_y: 101.0)
+          create(:unit, name: "unitB", position_x: 222.0, position_y: 101.0)
         end
       end
       let(:expected_response) do
@@ -25,16 +25,16 @@ RSpec.describe "Units", type: :request do
               name: "unitA",
               position_x: 11.0,
               position_y: 10.0,
-              created: "2025-01-02T11:00+02:00",
-              modified: "2025-01-02T11:00+02:00"
+              created_at: "2025-01-02T11:00+02:00",
+              modified_at: "2025-01-02T11:00+02:00"
             },
             {
               id: unit_b.id.to_s,
               name: "unitB",
               position_x: 222.0,
               position_y: 101.0,
-              created: "2025-01-03T11:00+02:00",
-              modified: "2025-01-03T11:00+02:00"
+              created_at: "2025-01-03T11:00+02:00",
+              modified_at: "2025-01-03T11:00+02:00"
             }
           ]
         }

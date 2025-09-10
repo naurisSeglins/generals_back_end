@@ -48,21 +48,21 @@ class UnitSchema
       },
       position_x: {
         allOf: [
-          { "$ref": "#definitions/coordinate" },
+          { "$ref": "#/definitions/coordinate" },
           { description: "X coordinate of the unit in the game World" }
         ]
       },
       position_y: {
         allOf: [
-          { "$ref": "#definitions/coordinate" },
+          { "$ref": "#/definitions/coordinate" },
           { description: "Y coordinate of the unit in the game World" }
         ]
       },
       created_at: {
-        "$ref": "#/definitions/timestamp"
+        "$ref": "#/definitions/time_stamp"
       },
       updated_at: {
-        "$ref": "#/definitions/timestamp"
+        "$ref": "#/definitions/time_stamp"
       },
       # This constraint prohibits extra fields in your JSON objects beyond what's defined in the schema.
       additionalProperties: false,
