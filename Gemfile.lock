@@ -125,9 +125,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.13.2)
-    json-schema (6.0.0)
-      addressable (~> 2.8)
-      bigdecimal (~> 3.1)
+    json-schema (4.3.1)
+      addressable (>= 2.8)
     jsonapi-renderer (0.2.2)
     jsonapi_parameters (2.3.0)
       actionpack (>= 4.1.8)
@@ -400,12 +399,12 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.10.15)
   bcrypt
-  bootsnap
+  bootsnap (>= 1.18)
   brakeman
   debug
   factory_bot_rails
-  jbuilder
-  json-schema
+  jbuilder (~> 2.12)
+  json-schema (~> 4.0)
   jsonapi_parameters (~> 2.3)
   kredis
   puma (>= 5.0)

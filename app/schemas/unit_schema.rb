@@ -28,9 +28,83 @@ class UnitSchema
 
   # Enhanced schema for a single unit with rich validation
   def self.unit
+    build_schema(unit_definition)
+  end
+
+  # Schema for units collection
+  def self.collection
+    build_schema(
+      type: "object",
+      required: %w[units],
+      properties: {
+        units: {
+          type: "array",
+          items: { "$ref": "#/definitions/unit" },
+          description: "List of units",
+          minItems: 0,
+          uniqueItems: true
+        }
+      },
+      additionalProperties: false
+    )
+  end
+
+  # Schema for a single unit response
+  def self.single
+    build_schema(
+      type: "object",
+      required: [ "unit" ],
+      properties: {
+        unit: { "$ref": "#/definitions/unit" }
+      },
+      additionalProperties: false
+    )
+  end
+
+  # Schema for creating a new unit (request body)
+  def self.create
+    build_schema(
+      type: "object",
+      required: %w[name position_x position_y],
+      properties: {
+        name: { "$ref": "#/definitions/unit/properties/name" },
+        position_x: { "$ref": "#/definitions/unit/properties/position_x" },
+        position_y: { "$ref": "#/definitions/unit/properties/position_y" }
+      },
+      additionalProperties: false
+    )
+  end
+
+  # Schema for updating a unit (request body)
+  def self.update
+    build_schema(
+      type: "object",
+      properties: {
+        name: { "$ref": "#/definitions/unit/properties/name" },
+        position_x: { "$ref": "#/definitions/unit/properties/position_x" },
+        position_y: { "$ref": "#/definitions/unit/properties/position_y" }
+      },
+      additionalProperties: false,
+      minProperties: 1
+    )
+  end
+
+  # private
+
+  def self.build_schema(main_schema)
+    {
+      "$schema" => schema_version
+    }.merge(main_schema).merge(
+      definitions: definitions.merge(
+        unit: unit_definition
+      )
+    )
+  end
+
+  def self.unit_definition
     {
       type: "object",
-      required: %w[id name position_x position_y],
+      required: %w[id name position_x position_y created_at updated_at],
       properties: {
         id: {
           allOf: [
@@ -44,74 +118,36 @@ class UnitSchema
           maxLength: 50,
           pattern: "^[a-zA-Z0-9]+$",
           description: "Name of the unit, alphanumeric"
+        },
+        position_x: {
+          allOf: [
+            { "$ref": "#/definitions/coordinate" },
+            { description: "X coordinate of the unit in the game World" }
+          ]
+        },
+        position_y: {
+          allOf: [
+            { "$ref": "#/definitions/coordinate" },
+            { description: "Y coordinate of the unit in the game World" }
+          ]
+        },
+        created_at: {
+          type: "string",
+          format: "date-time",
+          description: "Timestamp of when the unit was created"
+        },
+        updated_at: {
+          type: "string",
+          format: "date-time",
+          description: "Timestamp of when the unit was last updated"
         }
       },
-      position_x: {
-        allOf: [
-          { "$ref": "#/definitions/coordinate" },
-          { description: "X coordinate of the unit in the game World" }
-        ]
-      },
-      position_y: {
-        allOf: [
-          { "$ref": "#/definitions/coordinate" },
-          { description: "Y coordinate of the unit in the game World" }
-        ]
-      },
-      created_at: {
-        "$ref": "#/definitions/time_stamp"
-      },
-      updated_at: {
-        "$ref": "#/definitions/time_stamp"
-      },
-      # This constraint prohibits extra fields in your JSON objects beyond what's defined in the schema.
       additionalProperties: false,
-      # This constraint enforces naming conventions for any properties in the JSON object.
-      # pass: id, position_x, unit_type
-      # fail: ID, Position-X, 123property
       propertyNames: {
         pattern: "^[a-z_][a-z0-9_]*$"
-      },
-      examples: [
-        {
-          id: 1,
-          name: "InfantryUnit",
-          position_x: 123.45,
-          position_y: 67.89,
-          created_at: "2025-08-03T12:55:27Z",
-          updated_at: "2025-08-03T12:55:27Z"
-        }
-      ]
+      }
     }
   end
 
-  # Schema for units collection
-  def self.collection
-    {
-      type: "object",
-      required: %w[units],
-      properties: {
-        units: {
-          type: "array",
-          items: { "$ref": "#/definitions/unit" },
-          description: "List of units",
-          minItems: 0,
-          uniqueItems: true
-        }
-      },
-      additionalProperties: false
-    }
-  end
-
-  # Schema for a single unit response
-  def self.single
-    {
-      type: "object",
-      required: [ "units" ],
-      properties: {
-        units: { "$ref": "#/definitions/unit" }
-      },
-      additionalProperties: false
-    }
-  end
+  private_class_method :build_schema, :unit_definition
 end
