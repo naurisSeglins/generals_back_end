@@ -1,19 +1,43 @@
 {
-  "type": "object",
-  "required": [
-    "name",
-    "position_x",
-    "position_y"
-  ],
-  "properties": {
-    "name": {
-      "type": "string"
+  "definitions": {
+    "unit": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "position_x",
+        "position_y",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "position_x": {
+          "type": "number"
+        },
+        "position_y": {
+          "type": "number"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
     },
-    "position_x": {
-      "type": "number"
-    },
-    "position_y": {
-      "type": "number"
+    "units": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/unit"
+      }
     }
   }
 }

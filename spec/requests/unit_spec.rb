@@ -7,12 +7,12 @@ RSpec.describe "Units", type: :request do
     let(:path) { "/unit" }
 
     context "when requesting all units" do
-      let(:unit_a) do
+      let!(:unit_a) do
         Timecop.freeze("2025-01-02 11:00") do
           create(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
         end
       end
-      let(:unit_b) do
+      let!(:unit_b) do
         Timecop.freeze("2025-01-03 10:00") do
           create(:unit, name: "unitB", position_x: 222.0, position_y: 101.0)
         end

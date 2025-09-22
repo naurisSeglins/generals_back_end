@@ -44,6 +44,15 @@ Rails gems. It makes test failures more readable.
 =end
   config.disable_monkey_patching!
 
+=begin
+   When use_transactional_fixtures is set to true,
+   RSpec wraps each example in a database transaction.
+   After the example finishes, the transaction is rolled back,
+   so any records created during the test are removed automatically.
+   This provides a clean database state both before and after each test without any extra code.
+=end
+  config.use_transactional_fixtures = true
+
   # Sets the default URL host value to "example.com" specifically for request specs
   config.before(:each, type: :request) do
     host! "example.com"
