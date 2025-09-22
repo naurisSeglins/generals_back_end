@@ -1,26 +1,25 @@
 class UnitController < ApiController
-  validate_request_schema UnitSchema, :create, only: [ :create ]
-  validate_request_schema UnitSchema, :update, only: [ :update ]
+  SCHEMA_PATH = Rails.root.join("config/schemas/unit.json")
 
   def index
     @units = Unit.all
-    respond_with_resource @units, :ok, serializer: ActiveModel::Serializer::CollectionSerializer,
-                          each_serializer: UnitSerializer,
-                          root: "units",
-                          schema_class: UnitSchema,
-                          schema_method: :collection
+    respond_with_resource(@units, :ok, output_schema: SCHEMA_PATH)
   end
 
   def show
     @unit = Unit.find(params[:id])
-    respond_with_resource({ unit: @unit }, :ok, schema_class: UnitSchema, schema_method: :single)
+    respond_with_resource @unit, :ok
   end
 
   def create
-    @unit = Unit.new(product_params)
+    errors = validate_json_schema(params[:unit], SCHEMA_PATH)
+    return respond_with_errors(errors) if errors
 
+    @unit = Unit.new(product_params)
     if @unit.save
-      respond_with_resource({ unit: @unit }, :created, schema_class: UnitSchema, schema_method: :single)
+      respond_with_resource @unit, :created
+    else
+      respond_with_errors(@unit.errors.full_messages)
     end
   end
 
@@ -30,7 +29,7 @@ class UnitController < ApiController
   def destroy
     @unit = Unit.find(params[:id]).destroy
 
-    respond_with_resource({ unit: @unit }, :ok, schema_class: UnitSchema, schema_method: :single)
+    respond_with_resource @unit, :ok
   end
 
   private

@@ -1,0 +1,19 @@
+{
+  "type": "object",
+  "required": [
+    "name",
+    "position_x",
+    "position_y"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "position_x": {
+      "type": "number"
+    },
+    "position_y": {
+      "type": "number"
+    }
+  }
+}

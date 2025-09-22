@@ -10,12 +10,4 @@ class UnitSerializer < ActiveModel::Serializer
   def position_y
     object.position_y.to_f
   end
-
-  def created_at
-    object.created_at.iso8601
-  end
-
-  def updated_at
-    object.updated_at.iso8601
-  end
 end
