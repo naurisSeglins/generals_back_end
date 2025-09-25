@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="deleted old code, created new simpler code. commit before fixing test errors">
-      <change beforePath="$PROJECT_DIR$/.idea/generals_back_end.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/generals_back_end.iml" afterDir="false" />
+    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="update the json, unit spec, api_controller. need to fix test config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/unit_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/unit_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/schemas/unit.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/schemas/unit.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/serializers/unit_serializer.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/serializers/unit_serializer.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/factories/unit.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/factories/unit.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/models/unit_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/models/unit_spec.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/requests/unit_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/requests/unit_spec.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/spec_helper.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/spec_helper.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,50 +52,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultRubyCreateTestTemplate": "RSpec",
-    "RSpec.Rails timecop hook freezes time at specified moment.executor": "Run",
-    "RSpec.Rails timecop hook.executor": "Run",
-    "RSpec.Rails.executor": "Run",
-    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor": "Run",
-    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor": "Run",
-    "RSpec.Unit callbacks.executor": "Run",
-    "RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor": "Run",
-    "RSpec.Unit validations verify name validation when position isn't a number.executor": "Run",
-    "RSpec.Unit validations verify unit attributes has correct attributes.executor": "Run",
-    "RSpec.Unit validations verify unit attributes.executor": "Run",
-    "RSpec.Unit validations when name have special characters and spaces.executor": "Run",
-    "RSpec.Unit validations when position isn't a number.executor": "Run",
-    "RSpec.Unit validations.executor": "Run",
-    "RSpec.Unit verify attributes when correct unit attributes.executor": "Run",
-    "RSpec.Unit verify attributes.executor": "Run",
-    "RSpec.Unit verify unit attributes has correct attributes.executor": "Run",
-    "RSpec.Unit.executor": "Run",
-    "RSpec.Units GET #index /unit when requesting all units shows index.executor": "Run",
-    "RSpec.Units GET #index /unit.executor": "Run",
-    "RSpec.Units.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1758513285556",
-    "git-widget-placeholder": "controller__routes",
-    "last_opened_file_path": "/Users/nseglins/Udemy/game/generals_back_end",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rearrange.code.on.save": "true",
-    "ruby.structure.view.model.defaults.configured": "true",
-    "settings.editor.selected.configurable": "ruby.rubocop",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultRubyCreateTestTemplate&quot;: &quot;RSpec&quot;,
+    &quot;RSpec.Rails timecop hook freezes time at specified moment.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Rails timecop hook.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Rails.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit callbacks.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify name validation when position isn't a number.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations verify unit attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations when name have special characters and spaces.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations when position isn't a number.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit validations.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify attributes when correct unit attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Unit.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Units GET #index /unit when requesting all units shows index.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Units GET #index /unit.executor&quot;: &quot;Run&quot;,
+    &quot;RSpec.Units.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1758596580342&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;controller__routes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nseglins/Udemy/game/generals_back_end&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ruby.rubocop&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config" />
@@ -107,7 +105,7 @@
     <option name="runOnSave" value="true" />
   </component>
   <component name="RunManager" selected="RSpec.Units">
-    <configuration name="Rails" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
+    <configuration name="Unit callbacks" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true" nameIsGenerated="true">
       <module name="generals_back_end" />
       <predefined_log_file enabled="true" id="RUBY_RSPEC" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -127,11 +125,11 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.rails.run.RailsRunConfigurationExtension" SCRATCH_USE_RAILS_RUNNER="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/rails_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/models/unit_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATHS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
-      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Rails" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="Unit callbacks" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_EXAMPLE_MATCHES" VALUE="false" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="LINE_NUMBER_EXAMPLE_IDS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
@@ -370,10 +368,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="RSpec.Units" />
+        <item itemvalue="RSpec.Unit" />
+        <item itemvalue="RSpec.Unit callbacks" />
         <item itemvalue="RSpec.Units GET #index /unit when requesting all units shows index" />
         <item itemvalue="RSpec.Units GET #index /unit" />
-        <item itemvalue="RSpec.Unit" />
-        <item itemvalue="RSpec.Rails" />
       </list>
     </recent_temporary>
   </component>
@@ -414,7 +412,10 @@
       <workItem from="1758249089557" duration="2104000" />
       <workItem from="1758476350647" duration="9310000" />
       <workItem from="1758511553457" duration="1647000" />
-      <workItem from="1758513227086" duration="1357000" />
+      <workItem from="1758513227086" duration="1488000" />
+      <workItem from="1758594641058" duration="1482000" />
+      <workItem from="1758596521353" duration="2501000" />
+      <workItem from="1758777611292" duration="2190000" />
     </task>
     <task id="LOCAL-00001" summary="base project">
       <option name="closed" value="true" />
@@ -520,7 +521,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758510640931</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="update the json, unit spec, api_controller. need to fix test config">
+      <option name="closed" value="true" />
+      <created>1758520199110</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1758520199110</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +548,8 @@
     <MESSAGE value="delete ai generated files. fix some minor issues. create json schema validator" />
     <MESSAGE value="unfinished process" />
     <MESSAGE value="deleted old code, created new simpler code. commit before fixing test errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="deleted old code, created new simpler code. commit before fixing test errors" />
+    <MESSAGE value="update the json, unit spec, api_controller. need to fix test config" />
+    <option name="LAST_COMMIT_MESSAGE" value="update the json, unit spec, api_controller. need to fix test config" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_validations_verify_name_validation_when_position_isn_t_a_number.rcov" NAME="Unit validations verify name validation when position isn't a number Coverage Results" MODIFIED="1754635187631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
@@ -554,13 +564,13 @@
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_verify_attributes_when_correct_unit_attributes.rcov" NAME="Unit verify attributes when correct unit attributes Coverage Results" MODIFIED="1754895883950" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_validations_verify_unit_attributes_has_correct_attributes.rcov" NAME="Unit validations verify unit attributes has correct attributes Coverage Results" MODIFIED="1754464019533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_callbacks__log_new_unit_creation__after_create_commit__writes_debug_message_to_special_log.rcov" NAME="Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log Coverage Results" MODIFIED="1755582272106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
-    <SUITE FILE_PATH="coverage/generals_back_end@Unit.rcov" NAME="Unit Coverage Results" MODIFIED="1756782783572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
-    <SUITE FILE_PATH="coverage/generals_back_end@Unit_callbacks.rcov" NAME="Unit callbacks Coverage Results" MODIFIED="1755544184076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
-    <SUITE FILE_PATH="coverage/generals_back_end@Units.rcov" NAME="Units Coverage Results" MODIFIED="1758513325773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
+    <SUITE FILE_PATH="coverage/generals_back_end@Unit_callbacks.rcov" NAME="Unit callbacks Coverage Results" MODIFIED="1758596201030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
+    <SUITE FILE_PATH="coverage/generals_back_end@Unit.rcov" NAME="Unit Coverage Results" MODIFIED="1758596790724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
+    <SUITE FILE_PATH="coverage/generals_back_end@Units.rcov" NAME="Units Coverage Results" MODIFIED="1758779652568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_validations.rcov" NAME="Unit validations Coverage Results" MODIFIED="1755511548815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_callbacks__log_new_unit_creation__after_create_commit_.rcov" NAME="Unit callbacks #log_new_unit_creation (after_create_commit) Coverage Results" MODIFIED="1755521600828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Rails_timecop_hook.rcov" NAME="Rails timecop hook Coverage Results" MODIFIED="1755584731588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
     <SUITE FILE_PATH="coverage/generals_back_end@Unit_validations_when_position_isn_t_a_number.rcov" NAME="Unit validations when position isn't a number Coverage Results" MODIFIED="1754895834235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
-    <SUITE FILE_PATH="coverage/generals_back_end@Units_GET__index__unit_when_requesting_all_units_shows_index.rcov" NAME="Units GET #index /unit when requesting all units shows index Coverage Results" MODIFIED="1756816880645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
+    <SUITE FILE_PATH="coverage/generals_back_end@Units_GET__index__unit_when_requesting_all_units_shows_index.rcov" NAME="Units GET #index /unit when requesting all units shows index Coverage Results" MODIFIED="1758596028689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
   </component>
 </project>

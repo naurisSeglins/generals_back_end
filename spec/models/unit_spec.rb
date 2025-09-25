@@ -22,7 +22,7 @@ RSpec.describe Unit, type: :model do
       let(:unit) { build_stubbed(:unit, name: "unit1!!!") }
       it "returns validation error" do
         expect { validating }.to(
-          change { unit.errors[:name] }.to([ "entered doesn't match allowed format" ])
+          change { unit.errors[:name] }.to(["entered doesn't match allowed format"])
         )
       end
     end
@@ -36,7 +36,7 @@ RSpec.describe Unit, type: :model do
 
       it "returns validation error" do
         expect { validating }.to(
-          change { unit.errors[:position_y] }.to([ "entered value isn't a number" ])
+          change { unit.errors[:position_y] }.to(["entered value isn't a number"])
         )
       end
     end
@@ -46,7 +46,7 @@ RSpec.describe Unit, type: :model do
     context "#log_new_unit_creation (after_create_commit)", freeze_at: "2025-01-01 12:00" do
       subject(:callback_after_create_commit) { unit.save! }
 
-      let(:unit) { build(:unit, name: "callbackUnit123") }
+      let(:unit) { create(:unit, name: "callbackUnit123") }
 
       let(:mock_logger) do
         instance_double(Logger, info: nil, debug: nil, "level=": nil, "formatter=": nil)

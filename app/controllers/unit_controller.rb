@@ -3,7 +3,7 @@ class UnitController < ApiController
 
   def index
     @units = Unit.all
-    respond_with_resource({ units: @units }, :ok, "units", output_schema: SCHEMA_PATH)
+    respond_with_resource(@units, :ok, "units", output_schema: SCHEMA_PATH)
   end
 
   def show

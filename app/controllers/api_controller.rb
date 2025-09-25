@@ -4,14 +4,18 @@ require "json-schema"
 
 class ApiController < ApplicationController
   def respond_with_resource(resource, status, schema, output_schema: nil)
-    json = ActiveModelSerializers::SerializableResource.new(resource).as_json
+    # First serialize the units array with the UnitSerializer
+    json = ActiveModelSerializers::SerializableResource.new(resource, each_serializer: UnitSerializer).as_json
+
+    # validation
     if output_schema
       errors = validate_output_schema(json, output_schema, schema)
       puts "errors #{errors}"
       return respond_with_errors(errors, status: 500) if errors
     end
 
-    render json: resource, status: status
+    # Then wrap it in a hash with 'units' key and render
+    render json: { units: json }
   end
 
   def respond_with_errors(errors, status: :unprocessable_entity)
