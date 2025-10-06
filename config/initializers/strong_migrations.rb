@@ -6,8 +6,7 @@ StrongMigrations.lock_timeout = 10.seconds
 StrongMigrations.statement_timeout = 1.hour
 
 # Skip database checks for SQLite (not supported)
-StrongMigrations.skip_database(:primary) if Rails.env.development? && ActiveRecord::Base.connection.adapter_name == 'SQLite'
-
+StrongMigrations.skip_database(:primary) if Rails.env.development? && ActiveRecord::Base.connection.adapter_name == "SQLite"
 
 # Analyze tables after indexes are added
 # Outdated statistics can sometimes hurt performance

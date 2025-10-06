@@ -1,0 +1,75 @@
+{
+  "definitions": {
+    "unit_data": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "attributes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["unit"]
+        },
+        "attributes": {
+          "type": "object",
+          "required": [
+            "name",
+            "position_x",
+            "position_y",
+            "created_at",
+            "updated_at"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "position_x": {
+              "type": "number"
+            },
+            "position_y": {
+              "type": "number"
+            },
+            "created_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "updated_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/unit_data"
+        }
+      }
+    },
+    "units": {
+      "type": "object",
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/unit_data"
+          }
+        }
+      }
+    }
+  }
+}
