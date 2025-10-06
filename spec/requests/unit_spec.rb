@@ -137,4 +137,54 @@ RSpec.describe "Units", type: :request do
       end
     end
   end
+
+  describe "PATCH #update /unit/:id" do
+    subject(:make_request) { patch path, headers: headers, params: params, as: :json }
+
+    let(:path) { "/unit/#{unit.id}" }
+
+    context "when updating single unit" do
+      let!(:unit) do
+        Timecop.freeze("2025-02-03 12:00") do
+          create(:unit, name: "unitX", position_x: 12.0, position_y: 120.0)
+        end
+      end
+
+      let(:params) do
+        {
+          data: {
+            type: "unit",
+            attributes: {
+              position_x: 111.0,
+              position_y: 123.0
+            }
+          }
+        }
+      end
+
+      let(:expected_response) do
+        {
+          data: {
+            id: unit.id.to_s,
+            type: "unit",
+            attributes: {
+              name: "unitX",
+              position_x: 111.0,
+              position_y: 123.0,
+              created_at: "2025-02-03T12:00:00Z",
+              updated_at: "2025-02-04T12:00:00Z"
+            }
+          }
+        }
+      end
+      it "updates the unit parameters" do
+        Timecop.freeze("2025-02-04 12:00") do
+          make_request
+        end
+
+        expect(response).to have_http_status(:ok)
+        expect(response_json).to match(expected_response)
+      end
+    end
+  end
 end
