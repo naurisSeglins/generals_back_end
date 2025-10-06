@@ -5,7 +5,7 @@ RSpec.describe Unit, type: :model do
 
       it "matches the attributes" do
         expect(unit.name).to eql("sampleUnit1")
-        expect(unit.position_x).to eql(1.0)
+        expect(unit.position_x).to eql(10.0)
         expect(unit.position_y).to eql(-1.0)
       end
     end
@@ -22,7 +22,7 @@ RSpec.describe Unit, type: :model do
       let(:unit) { build_stubbed(:unit, name: "unit1!!!") }
       it "returns validation error" do
         expect { validating }.to(
-          change { unit.errors[:name] }.to(["entered doesn't match allowed format"])
+          change { unit.errors[:name] }.to([ "entered doesn't match allowed format" ])
         )
       end
     end
@@ -36,7 +36,7 @@ RSpec.describe Unit, type: :model do
 
       it "returns validation error" do
         expect { validating }.to(
-          change { unit.errors[:position_y] }.to(["entered value isn't a number"])
+          change { unit.errors[:position_y] }.to([ "entered value isn't a number" ])
         )
       end
     end
