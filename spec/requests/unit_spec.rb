@@ -187,4 +187,20 @@ RSpec.describe "Units", type: :request do
       end
     end
   end
+
+  describe "DELETE #destroy /unit/:id" do
+    subject(:make_request) { delete path, headers: headers }
+
+    let(:path) { "/unit/#{unit.id}" }
+
+    let!(:unit) { create(:unit) }
+
+    context "making a request with correct params for unit deletion" do
+      it "deletes the record and responds with no content" do
+        expect { make_request }.to change { Unit.count }.by(-1)
+
+        expect(response).to have_http_status(:no_content)
+      end
+    end
+  end
 end

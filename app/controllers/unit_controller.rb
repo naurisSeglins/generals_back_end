@@ -30,9 +30,11 @@ class UnitController < ApiController
   end
 
   def destroy
-    @unit = Unit.find(params[:id]).destroy
+    @unit = Unit.find(params[:id])
 
-    respond_with_resource @unit, :ok
+    if @unit.destroy
+      head :no_content
+    end
   end
 
   private
