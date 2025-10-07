@@ -23,12 +23,18 @@ class UnitController < ApiController
   end
 
   def update
+    @unit = Unit.find(params[:id])
+    if @unit.update(position_params)
+      respond_with_resource @unit, :ok, "unit", output_schema: SCHEMA_PATH
+    end
   end
 
   def destroy
-    @unit = Unit.find(params[:id]).destroy
+    @unit = Unit.find(params[:id])
 
-    respond_with_resource @unit, :ok
+    if @unit.destroy
+      head :no_content
+    end
   end
 
   private
@@ -37,5 +43,9 @@ class UnitController < ApiController
     params.from_jsonapi.require(:unit).permit(
       :name, :position_x, :position_y
     )
+  end
+
+  def position_params
+    params.from_jsonapi.require(:unit).permit(:position_x, :position_y)
   end
 end
