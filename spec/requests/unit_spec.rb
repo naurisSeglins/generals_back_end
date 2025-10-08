@@ -52,6 +52,108 @@ RSpec.describe "Units", type: :request do
         expect(response_json).to eq(expected_response)
       end
     end
+    describe "GET #index with caching" do
+      it "caches data to avoid database queries" do
+        # Create a unit
+        create(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
+
+        # Before the first request, the cache should be empty
+        expect(Rails.cache.exist?("all_units")).to be false
+
+        # Make the first request
+        get "/unit", headers: headers
+
+        # First request should be 200 OK
+        expect(response).to have_http_status(:ok)
+
+        # After the first request, the cache should be populated
+        expect(Rails.cache.exist?("all_units")).to be true
+
+        # Let's directly check if the cache contains our unit
+        cached_data = Rails.cache.read("all_units")
+        expect(cached_data).to be_an(Array)
+        expect(cached_data.first.name).to eq("unitA")
+
+        # Now, let's stub the Unit.all method to track if it's called
+        allow(Unit).to receive(:all).and_call_original
+
+        # Make a second request
+        get "/unit", headers: headers
+
+        # Expect that Unit.all was not called during the second request
+        expect(Unit).not_to have_received(:all)
+
+        # The response should still be 200 with data
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include("unitA")
+      end
+
+      it "returns fresh data when collection changes" do
+        # Create first unit
+        create(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
+
+        # Make the first request
+        get "/unit", headers: headers
+        expect(response).to have_http_status(:ok)
+
+        # Verify the cache was populated
+        expect(Rails.cache.exist?("all_units")).to be true
+        cached_data = Rails.cache.read("all_units")
+        expect(cached_data.length).to eq(1)
+
+        # Create another unit (collection has changed)
+        create(:unit, name: "unitB", position_x: 22.0, position_y: 20.0)
+
+        # Ensure cache was cleared by the after_create callback on Unit
+        expect(Rails.cache.exist?("all_units")).to be false
+
+        # Make the second request
+        get "/unit", headers: headers
+
+        # Verify the cache was repopulated with new data
+        expect(Rails.cache.exist?("all_units")).to be true
+        new_cached_data = Rails.cache.read("all_units")
+        expect(new_cached_data.length).to eq(2)
+
+        # Verify both units are in the response
+        expect(response.body).to include("unitA")
+        expect(response.body).to include("unitB")
+      end
+
+      it "returns fresh data when resource is updated" do
+        # Create a unit
+        unit = create(:unit, name: "unitA", position_x: 11.0, position_y: 10.0)
+
+        # Make the first request
+        get "/unit", headers: headers
+        expect(response).to have_http_status(:ok)
+
+        # Verify the cache was populated
+        expect(Rails.cache.exist?("all_units")).to be true
+        cached_data = Rails.cache.read("all_units")
+        expect(cached_data.first.position_x).to eq(11.0)
+
+        # Update the unit
+        Timecop.travel(1.hour.from_now) do
+          unit.update(position_x: 50.0)
+        end
+
+        # Ensure cache was cleared by the after_save callback on Unit
+        expect(Rails.cache.exist?("all_units")).to be false
+
+        # Make a second request
+        get "/unit", headers: headers
+
+        # Verify the cache was repopulated with updated data
+        expect(Rails.cache.exist?("all_units")).to be true
+        new_cached_data = Rails.cache.read("all_units")
+        expect(new_cached_data.first.position_x).to eq(50.0)
+
+        # Should be a fresh response with updated data
+        expect(response).to have_http_status(:ok)
+        expect(response.body).to include("50.0")
+      end
+    end
   end
 
   describe "GET #show /unit/:id" do
