@@ -2,7 +2,9 @@ class UnitController < ApiController
   SCHEMA_PATH = Rails.root.join("config/schemas/unit.json")
 
   def index
-    @units = Unit.all
+    @units = Rails.cache.fetch("all_units", expires_in: 12.hours) do
+      Unit.all.to_a
+    end
     respond_with_resource @units, :ok, "units", output_schema: SCHEMA_PATH
   end
 
@@ -12,8 +14,6 @@ class UnitController < ApiController
   end
 
   def create
-    # errors = validate_json_schema(params[:unit], SCHEMA_PATH)
-    # return respond_with_errors(errors) if errors
     @unit = Unit.new(unit_params)
     if @unit.save
       respond_with_resource @unit, :created, "unit", output_schema: SCHEMA_PATH
