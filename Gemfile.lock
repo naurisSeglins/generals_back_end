@@ -166,10 +166,6 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.9-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.9-arm-linux-musl)
-      racc (~> 1.4)
     nokogiri (1.18.9-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.9-x86_64-darwin)
@@ -330,15 +326,15 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    sorbet (0.5.11414)
-      sorbet-static (= 0.5.11414)
-    sorbet-runtime (0.5.11414)
-    sorbet-static (0.5.11414-aarch64-linux)
-    sorbet-static (0.5.11414-universal-darwin)
-    sorbet-static (0.5.11414-x86_64-linux)
-    sorbet-static-and-runtime (0.5.11414)
-      sorbet (= 0.5.11414)
-      sorbet-runtime (= 0.5.11414)
+    sorbet (0.6.12645)
+      sorbet-static (= 0.6.12645)
+    sorbet-runtime (0.6.12645)
+    sorbet-static (0.6.12645-aarch64-linux)
+    sorbet-static (0.6.12645-universal-darwin)
+    sorbet-static (0.6.12645-x86_64-linux)
+    sorbet-static-and-runtime (0.6.12645)
+      sorbet (= 0.6.12645)
+      sorbet-runtime (= 0.6.12645)
     spoom (1.6.3)
       erubi (>= 1.10.0)
       prism (>= 0.28.0)
@@ -348,8 +344,6 @@ GEM
       thor (>= 0.19.2)
     sqlite3 (2.7.3-aarch64-linux-gnu)
     sqlite3 (2.7.3-aarch64-linux-musl)
-    sqlite3 (2.7.3-arm-linux-gnu)
-    sqlite3 (2.7.3-arm-linux-musl)
     sqlite3 (2.7.3-arm64-darwin)
     sqlite3 (2.7.3-x86_64-darwin)
     sqlite3 (2.7.3-x86_64-linux-gnu)
@@ -392,8 +386,6 @@ PLATFORMS
   aarch64-linux
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
   arm64-darwin
   x86_64-darwin
   x86_64-linux
