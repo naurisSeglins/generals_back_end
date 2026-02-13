@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="cache logic - YEAAY!!!">
+    <list default="true" id="e2a5a149-2033-4284-ae78-0c428514c7be" name="Changes" comment="delete coverage html">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/.resultset.json" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/.resultset.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/coverage/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,65 +46,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultRubyCreateTestTemplate&quot;: &quot;RSpec&quot;,
-    &quot;RSpec.Rails timecop hook freezes time at specified moment.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Rails timecop hook.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Rails.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit Caching GET #index with caching returns fresh data when collection changes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit Caching.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit callbacks.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify name validation when position isn't a number.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations verify unit attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations when name have special characters and spaces.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations when position isn't a number.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit validations.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify attributes when correct unit attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit verify unit attributes has correct attributes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Unit.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching caches data to avoid database queries.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching returns 200 for the first request and includes ETag.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching returns 200 for the first request.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching returns fresh data when collection changes.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching returns fresh data when resource is updated.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit GET #index with caching.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit when requesting all units shows index.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #index /unit.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #show /unit/:id when requesting single unit shows index.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units GET #show /unit/:id.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units PATCH #update /unit/:id when updating single unit.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units PATCH #update /unit/:id.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units POST #create /unit when requesting single unit creation with correct unit params shows index.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units POST #create /unit when requesting single unit creation with correct unit params.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units POST #create /unit.executor&quot;: &quot;Run&quot;,
-    &quot;RSpec.Units.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP&quot;: &quot;1760928687419&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nseglins/Udemy/game/generals_back_end&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
-    &quot;ruby.structure.view.model.defaults.configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;ruby.rubocop&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultRubyCreateTestTemplate": "RSpec",
+    "RSpec.Rails timecop hook freezes time at specified moment.executor": "Run",
+    "RSpec.Rails timecop hook.executor": "Run",
+    "RSpec.Rails.executor": "Run",
+    "RSpec.Unit Caching GET #index with caching returns fresh data when collection changes.executor": "Run",
+    "RSpec.Unit Caching.executor": "Run",
+    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit) writes debug message to special log.executor": "Run",
+    "RSpec.Unit callbacks #log_new_unit_creation (after_create_commit).executor": "Run",
+    "RSpec.Unit callbacks.executor": "Run",
+    "RSpec.Unit validations verify name validation when position isn't a number returns validation error.executor": "Run",
+    "RSpec.Unit validations verify name validation when position isn't a number.executor": "Run",
+    "RSpec.Unit validations verify unit attributes has correct attributes.executor": "Run",
+    "RSpec.Unit validations verify unit attributes.executor": "Run",
+    "RSpec.Unit validations when name have special characters and spaces.executor": "Run",
+    "RSpec.Unit validations when position isn't a number.executor": "Run",
+    "RSpec.Unit validations.executor": "Run",
+    "RSpec.Unit verify attributes when correct unit attributes.executor": "Run",
+    "RSpec.Unit verify attributes.executor": "Run",
+    "RSpec.Unit verify unit attributes has correct attributes.executor": "Run",
+    "RSpec.Unit.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching caches data to avoid database queries.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching returns 200 for the first request and includes ETag.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching returns 200 for the first request.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching returns fresh data when collection changes.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching returns fresh data when resource is updated.executor": "Run",
+    "RSpec.Units GET #index /unit GET #index with caching.executor": "Run",
+    "RSpec.Units GET #index /unit when requesting all units shows index.executor": "Run",
+    "RSpec.Units GET #index /unit.executor": "Run",
+    "RSpec.Units GET #show /unit/:id when requesting single unit shows index.executor": "Run",
+    "RSpec.Units GET #show /unit/:id.executor": "Run",
+    "RSpec.Units PATCH #update /unit/:id when updating single unit.executor": "Run",
+    "RSpec.Units PATCH #update /unit/:id.executor": "Run",
+    "RSpec.Units POST #create /unit when requesting single unit creation with correct unit params shows index.executor": "Run",
+    "RSpec.Units POST #create /unit when requesting single unit creation with correct unit params.executor": "Run",
+    "RSpec.Units POST #create /unit.executor": "Run",
+    "RSpec.Units.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.lang.ruby.rbs.tools.collection.workspace.sync.RbsCollectionUpdateProjectActivity#LAST_UPDATE_TIMESTAMP": "1767730151028",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/nseglins/Udemy/game/generals_back_end",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rearrange.code.on.save": "true",
+    "ruby.structure.view.model.defaults.configured": "true",
+    "settings.editor.selected.configurable": "ruby.rubocop",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config" />
@@ -436,6 +434,13 @@
       <workItem from="1759915440557" duration="3000" />
       <workItem from="1760928628187" duration="1379000" />
       <workItem from="1760944509832" duration="54000" />
+      <workItem from="1761136702524" duration="597000" />
+      <workItem from="1763323219817" duration="4044000" />
+      <workItem from="1763374416585" duration="172000" />
+      <workItem from="1763648307503" duration="1181000" />
+      <workItem from="1767555200761" duration="2071000" />
+      <workItem from="1767729931971" duration="144000" />
+      <workItem from="1767730092022" duration="1645000" />
     </task>
     <task id="LOCAL-00001" summary="base project">
       <option name="closed" value="true" />
@@ -581,7 +586,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759889919771</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="delete coverage html">
+      <option name="closed" value="true" />
+      <created>1761136742263</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1761136742263</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,7 +618,8 @@
     <MESSAGE value="SHOW and POST tests and controller. Adjusting API controller and unit serializer, added active model serializers" />
     <MESSAGE value="fix validation, refactor schema to match unit and units, modify time types in ser, fix test and adjust test times" />
     <MESSAGE value="allow local api requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="allow local api requests" />
+    <MESSAGE value="delete coverage html" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete coverage html" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/generals_back_end@Units_GET__index__unit_GET__index_with_caching_returns_fresh_data_when_collection_changes.rcov" NAME="Units GET #index /unit GET #index with caching returns fresh data when collection changes Coverage Results" MODIFIED="1759893684958" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="generals_back_end" />
