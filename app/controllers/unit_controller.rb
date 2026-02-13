@@ -1,40 +1,41 @@
+# frozen_string_literal: true
+
 class UnitController < ApiController
   SCHEMA_PATH = Rails.root.join("config/schemas/unit.json")
 
+  def initialize
+    super
+    @query_service = UnitQueryService.new
+    @command_service = UnitCommandService.new
+  end
+
   def index
-    @units = Rails.cache.fetch("all_units", expires_in: 12.hours) do
-      Unit.all.to_a
-    end
-    respond_with_resource @units, :ok, "units", output_schema: SCHEMA_PATH
+    units = @query_service.all
+    respond_with_resource units, :ok, "units", output_schema: SCHEMA_PATH
   end
 
   def show
-    @unit = Unit.find(params[:id])
-    respond_with_resource @unit, :ok, "unit", output_schema: SCHEMA_PATH
+    unit = @query_service.find(params[:id])
+    respond_with_resource unit, :ok, "unit", output_schema: SCHEMA_PATH
   end
 
   def create
-    @unit = Unit.new(unit_params)
-    if @unit.save
-      respond_with_resource @unit, :created, "unit", output_schema: SCHEMA_PATH
-    else
-      respond_with_errors(@unit.errors.full_messages)
-    end
+    unit = @command_service.create(unit_params)
+    respond_with_resource unit, :created, "unit", output_schema: SCHEMA_PATH
+  rescue UnitCommandService::CreationError => e
+    respond_with_errors([e.message])
   end
 
   def update
-    @unit = Unit.find(params[:id])
-    if @unit.update(position_params)
-      respond_with_resource @unit, :ok, "unit", output_schema: SCHEMA_PATH
-    end
+    unit = @command_service.update(params[:id], position_params)
+    respond_with_resource unit, :ok, "unit", output_schema: SCHEMA_PATH
+  rescue UnitCommandService::UpdateError => e
+    respond_with_errors([e.message])
   end
 
   def destroy
-    @unit = Unit.find(params[:id])
-
-    if @unit.destroy
-      head :no_content
-    end
+    @command_service.destroy(params[:id])
+    head :no_content
   end
 
   private

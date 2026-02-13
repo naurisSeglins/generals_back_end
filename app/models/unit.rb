@@ -1,23 +1,39 @@
+# frozen_string_literal: true
+
 class Unit < ApplicationRecord
+  # Single Responsibility: Data validation and persistence
+
   validates :name, :position_x, :position_y, presence: true
+  validates :name,
+            format: { with: /\A[a-zA-Z0-9]+\z/, message: "entered doesn't match allowed format" },
+            length: { in: 5..50 }
+  validates :position_x, :position_y,
+            numericality: {
+              allow_integer: true,
+              allow_float: true,
+              message: "entered value isn't a number"
+            }
 
-  validates :name, format: { with: /\A[a-zA-Z0-9]+\z/, message: "entered doesn't match allowed format" }
-  validates :name, length: { in: 5..50 }
-
-  validates :position_x, :position_y, numericality: { allow_integer: true, allow_float: true, message: "entered value isn't a number" }
-
-  after_create_commit :log_new_unit_creation
-  after_save :expire_cache
-  after_destroy :expire_cache
+  # Callbacks delegate to observer
+  after_create_commit :notify_observer_after_create
+  after_save :notify_observer_after_save
+  after_destroy :notify_observer_after_destroy
 
   private
 
-  def log_new_unit_creation
-    Logger.new(Rails.root.join("log/unit_creation.log").to_s)
-          .debug("New Unit##{id} '#{name}' created at #{created_at}")
+  def notify_observer_after_create
+    observer.after_create(self)
   end
 
-  def expire_cache
-    Rails.cache.delete("all_units")
+  def notify_observer_after_save
+    observer.after_save(self)
+  end
+
+  def notify_observer_after_destroy
+    observer.after_destroy(self)
+  end
+
+  def observer
+    @observer ||= UnitObserver.new
   end
 end
